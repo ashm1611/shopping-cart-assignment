@@ -1,15 +1,14 @@
 import React from "react";
-import Logo from "../../atoms/Logo/Logo";
 import "./Header.scss";
+import logo from '../../../static/images/logo.png';
 import { Link } from "react-router-dom";
-import Cart from "../../molecules/Cart/Cart";
 
 export default function Header() {
   return (
     <header className="header">
       <div className="header__sub-container">
         <Link to="/">
-          <Logo />
+        <img src={logo} className="logo-image" alt="Logo Image" />
         </Link>
         <nav className="header__sub-container__nav-items">
           <Link to="/" className="header__sub-container__nav-items__link">
@@ -37,7 +36,6 @@ export default function Header() {
               Register
             </Link>
           </nav>
-          <Cart />
         </div>
       </div>
     </header>
