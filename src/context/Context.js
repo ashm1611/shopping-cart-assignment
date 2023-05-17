@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext, useReducer,  } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { cartReducers } from "../reducers/cartReducers";
+import { cartReducers } from "../reducers/cartReducer";
 import Products from "../server/products/index.get.json";
 import Categories from "../server/categories/index.get.json";
 

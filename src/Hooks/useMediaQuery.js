@@ -14,9 +14,9 @@ export function useMediaQuery(query) {
       setMatches(media.matches);
     };
 
-    media.addEventListener(handler);
+    media.addEventListener('click',handler);
 
-    return () => media.removeEventListener(handler);
+    return () => media.removeEventListener('click',handler);
   }, [matches, query]);
 
   return matches;

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { GlobalContext } from "../../../contexts/GlobalContext";
-import { useMediaQuery } from "../../../utils/useMediaQuery";
-import Button from "../../atoms/Button/Button";
-import Image from "../../atoms/Image/Image";
+import { GlobalContext } from "../../context/Context";
+import { useMediaQuery } from "../../Hooks/useMediaQuery";
+import Button from "../Button/Button";
+import Image from "../Image/Image";
 import "./Card.scss";
 
 export default function Card({ name, imageUrl, price, stock, text, id }) {

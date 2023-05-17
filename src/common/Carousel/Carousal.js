@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./Carousel.scss";
-import ImageData from "../../../server/banners/index.get.json";
-import Image from "../../atoms/Image/Image";
-import Button from "../../atoms/Button/Button";
+import "./Carousal.scss";
+import ImageData from "../../server/banners/index.get.json";
+import Image from "../Image/Image";
+import Button from "../Button/Button";
 
 export default function Carousel() {
   const [current, setCurrent] = useState(1);

@@ -1,6 +1,5 @@
 import React from "react";
-import WrapperText from "../../molecules/WrapperText/WrapperText";
-import Form from "../../organisms/Form/Form";
+import Form from "../Form/Form";
 import "./Register.scss";
 
 export default function Register() {
@@ -35,11 +34,10 @@ export default function Register() {
 
   return (
     <main className="register-container">
-      <WrapperText
-        className={"register-container__article"}
-        title={"SignUp"}
-        description={"We do not share your personal details"}
-      />
+      <div className={"register-container__article"}>
+      <h2 className="section__header">{'SignUp'}</h2>
+      <p className="section__text">{"We do not share your personal details"}</p>
+    </div>
       <Form
         inputLabel={inputLabel}
         button={"SignUp"}

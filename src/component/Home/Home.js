@@ -1,7 +1,7 @@
 import React from "react";
-import useProducts from "../../../utils/useProducts";
-import Carousel from "../../organisms/Carousel/Carousel";
-import Section from "../../organisms/Section/Section";
+import useProducts from "../../Hooks/useProducts";
+import Carousel from "../../common/Carousel/Carousal";
+import Section from "../Home/Section";
 import "./Home.scss";
 
 export default function Home() {

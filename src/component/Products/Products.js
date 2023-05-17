@@ -1,9 +1,9 @@
 import React from "react";
-import { useMediaQuery } from "../../../utils/useMediaQuery";
-import useProducts from "../../../utils/useProducts";
-import Dropdown from "../../molecules/Dropdown/Dropdown";
-import Sidebar from "../../molecules/Sidebar/Sidebar";
-import Card from "../../organisms/Card/Card";
+import { useMediaQuery } from "../../Hooks/useMediaQuery";
+import useProducts from "../../Hooks/useProducts";
+import Dropdown from "../../common/DropDown/DropdownSelect";
+import Sidebar from "../../common/Sidebar/Sidebar";
+import Card from "../../common/Card/Card";
 import "./Products.scss";
 
 export default function Products() {

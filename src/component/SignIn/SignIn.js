@@ -1,7 +1,6 @@
 import React from 'react';
-import './Signin.scss';
-import Form from '../../organisms/Form/Form';
-import WrapperText from '../../molecules/WrapperText/WrapperText';
+import './SignIn.scss';
+import Form from '../Form/Form';
 
 export default function Signin() {
     const inputLabel = [
@@ -19,7 +18,10 @@ export default function Signin() {
 
     return (
         <main className="login-container">
-            <WrapperText className={"login-container__article"} title={"Login"} description={"Get Access to your Orders, Wishlist and Recommendations"} />
+                <div className={"login-container__article"}>
+      <h2 className="section__header">{'Login'}</h2>
+      <p className="section__text">{"Get Access to your Orders, Wishlist and Recommendations"}</p>
+    </div>
             <Form inputLabel={inputLabel} button={"Login"} className={"login-container__form"} />
         </main>
     )

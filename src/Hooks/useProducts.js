@@ -32,7 +32,7 @@ export default function useProducts() {
         Products.filter((product) => product.category === match.params.id)
       );
     }
-  }, [location]);
+  }, [location, match]);
 
   return {
     filteredCategory,

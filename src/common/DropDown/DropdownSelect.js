@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./Dropdown.scss";
-import Button from "../../atoms/Button/Button";
+import "./DropdownSelect.scss";
+import Button from "../Button/Button";
 import { useLocation } from "react-router";
 
 export default function Dropdown({ items, handleProduct }) {
@@ -15,9 +15,10 @@ export default function Dropdown({ items, handleProduct }) {
         if (item.id === id) {
           setName(item.name);
         }
+        return;
       });
     }
-  }, [location]);
+  }, [location, items]);
 
   const handleDropdown = () => {
     setIsActive(!isActive);

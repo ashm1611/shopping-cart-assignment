@@ -1,9 +1,9 @@
 import React from "react";
 import "./Form.scss";
-import Button from "../../atoms/Button/Button";
-import Inputbox from "../../atoms/Inputbox/Inputbox";
-import useForm from "../../../utils/useForm";
-import validate from "../../../utils/validateForm";
+import Button from "../../common/Button/Button";
+import Inputbox from "../../common/Input/Inputbox";
+import useForm from "../../Hooks/useForm";
+import validate from "../../Hooks/validateForms";
 
 export default function Form({ className = "", inputLabel, button }) {
   const { handleChange, values, handleSubmit, errors } = useForm(validate);

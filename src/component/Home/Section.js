@@ -1,6 +1,6 @@
 import React from "react";
-import Image from "../../atoms/Image/Image";
-import Content from "../../molecules/Content/Content";
+import Image from "../../common/Image/Image";
+import Content from "../Content/Content";
 import "./Section.scss";
 
 export default function Section({
@@ -14,7 +14,7 @@ export default function Section({
 }) {
   return (
     <section className="container">
-      {order % 2 == 0 ? (
+      {order % 2 === 0 ? (
         <>
           <Content
             className="container__content"

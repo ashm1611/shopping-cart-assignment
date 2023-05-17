@@ -1,6 +1,6 @@
 import React from "react";
 import "./Content.scss";
-import Button from "../../atoms/Button/Button";
+import Button from "../../common/Button/Button";
 
 export default function Content({
   className,
