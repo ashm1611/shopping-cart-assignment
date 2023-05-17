@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import "./Carousal.scss";
 import ImageData from "../../server/banners/index.get.json";
 import Image from "../Image/Image";
 import Button from "../Button/Button";
+import "./Carousal.scss";
 
-export default function Carousel() {
+export default function Carousal() {
   const [current, setCurrent] = useState(1);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
-
+  console.log("image data", ImageData)
   const length = ImageData.length;
 
   const handleSlide = (slideOrder) => {
@@ -37,7 +37,9 @@ export default function Carousel() {
   return (
     <section className="carousel">
       <div className="carousel__container">
-        {ImageData.map((data) => (
+        {ImageData.map((data) => { 
+          console.log(data.order === current)
+          return (
           <div
             key={data.id}
             className={
@@ -49,7 +51,7 @@ export default function Carousel() {
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
-            {data.order === current && (
+            {data.order == current && (
               <Image
                 source={data.bannerImageUrl}
                 alt={data.bannerImageAlt}
@@ -57,7 +59,8 @@ export default function Carousel() {
               />
             )}
           </div>
-        ))}
+        )
+    })}
       </div>
       <button
         className={"carousel__left-button"}
