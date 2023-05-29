@@ -2,7 +2,7 @@ import React from "react";
 import "./Button.scss";
 
 export default function Button({
-  children,
+  child,
   className = "",
   onClick,
   ...props
@@ -13,7 +13,7 @@ export default function Button({
       onClick={onClick}
       {...props}
     >
-      {children}
+      {child}
     </button>
   );
 }

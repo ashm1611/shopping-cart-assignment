@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 import Image from "../Image/Image";
 import "./Card.scss";
 
-export default function Card({ name, imageUrl, price, stock, text, id }) {
+export default function Card({ name, imageURL, prc, inStock, txt, id }) {
   const browserWidth = useMediaQuery("(min-width: 769px)");
   const {
     dispatch,
@@ -19,10 +19,10 @@ export default function Card({ name, imageUrl, price, stock, text, id }) {
         product: {
           [id]: {
             id,
-            imageUrl,
+            imageURL,
             name,
-            price,
-            stock,
+            prc,
+            inStock,
             quantity: 1,
           },
         },
@@ -40,18 +40,18 @@ export default function Card({ name, imageUrl, price, stock, text, id }) {
       <h2 className="card-container__title">{name}</h2>
       <figure className="card-container__image">
         <Image
-          source={imageUrl}
+          source={imageURL}
           alt={`Image of ${name}`}
           className={"product-image"}
         />
       </figure>
-      <p className="card-container__text" title={text}>
-        {text}
+      <p className="card-container__text" title={txt}>
+        {txt}
       </p>
       <section className="card-container__section">
         {browserWidth ? (
           <>
-            <p className="card-container__section__price">MRP Rs.{price}</p>
+            <p className="card-container__section__price">MRP Rs.{prc}</p>
             <Button
               onClick={() => addItemToCart()}
               className={"card-container__section__buy-button"}
@@ -64,7 +64,7 @@ export default function Card({ name, imageUrl, price, stock, text, id }) {
             onClick={() => addItemToCart()}
             className={"card-container__section__buy-button"}
           >
-            Buy Now @ Rs.{price}
+            Buy Now @ Rs.{prc}
           </Button>
         )}
       </section>

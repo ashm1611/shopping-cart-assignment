@@ -5,53 +5,29 @@ import Button from "../Button/Button";
 import "./Carousal.scss";
 
 export default function Carousal() {
-  const [current, setCurrent] = useState(1);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
+  const [curr, setCurr] = useState(1);
   console.log("image data", ImageData)
   const length = ImageData.length;
 
   const handleSlide = (slideOrder) => {
-    setCurrent(slideOrder);
-  };
-
-  const handleTouchStart = (e) => {
-    setTouchStart(e.targetTouches[0].clientX);
-    setTouchEnd(0);
-  };
-
-  const handleTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (touchEnd && touchStart - touchEnd > 15) {
-      handleSlide(current === length ? 1 : current + 1);
-    }
-
-    if (touchEnd && touchStart - touchEnd < -15) {
-      handleSlide(current === 1 ? length : current - 1);
-    }
+    setCurr(slideOrder);
   };
 
   return (
     <section className="carousel">
       <div className="carousel__container">
         {ImageData.map((data) => { 
-          console.log(data.order === current)
+          console.log(data.order === curr)
           return (
           <div
             key={data.id}
             className={
-              data.order === current
+              data.order === curr
                 ? "carousel__container__slide active"
                 : "carousel__container__slide"
             }
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
           >
-            {data.order == current && (
+            {data.order === curr && (
               <Image
                 source={data.bannerImageUrl}
                 alt={data.bannerImageAlt}
@@ -64,13 +40,13 @@ export default function Carousal() {
       </div>
       <button
         className={"carousel__left-button"}
-        onClick={() => handleSlide(current === 1 ? length : current - 1)}
+        onClick={() => handleSlide(curr === 1 ? length : curr - 1)}
       >
         Prev
       </button>
       <button
         className={"carousel__right-button"}
-        onClick={() => handleSlide(current === length ? 1 : current + 1)}
+        onClick={() => handleSlide(curr === length ? 1 : curr + 1)}
       >
         Next
       </button>
@@ -79,7 +55,7 @@ export default function Carousal() {
           <Button
             key={data.id}
             className={
-              data.order === current
+              data.order === curr
                 ? "carousel__nav__dots dots-active"
                 : "carousel__nav__dots"
             }
